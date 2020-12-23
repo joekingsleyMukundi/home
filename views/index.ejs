@@ -1132,15 +1132,16 @@ backface-visibility: hidden;
 
                     <div class="homey_login_messages message"></div>
                     
-                                        <button type="button" class="homey-facebook-login btn btn-facebook-lined btn-full-width"><i class="fa fa-facebook" aria-hidden="true"></i> Login with Facebook</button>
+                                        <a href="/auth/facebook" class=" btn btn-facebook-lined btn-full-width"><i class="fa fa-facebook" aria-hidden="true"></i> Login with Facebook</a>
                                         
-                                        <button type="button" class="homey-google-login btn btn-google-plus-lined btn-full-width"><i class="fa fa-google-plus" aria-hidden="true"></i> Login with Google</button>
+                                        <a href="/auth/google" class=" btn btn-google-plus-lined btn-full-width"><i class="fa fa-google-plus"></i> Login with
+                                          Google</a>
                     
                     <div class="modal-login-form">
 
                                                 <p class="text-center"><strong>Log in</strong></p>
                         
-                        <form action="/" method="POST">
+                        <form action="/login" method="POST">
                             <div class="form-group">
                                 <input type="text" name="username" class="form-control email-input-1" placeholder="Username or Email">
                             </div>
@@ -1183,13 +1184,14 @@ backface-visibility: hidden;
 
                     <div class="homey_register_messages homey_login_messages message"></div>
 
-                                        <button type="button" class="homey-facebook-login btn btn-facebook-lined btn-full-width"><i class="fa fa-facebook" aria-hidden="true"></i> Login with Facebook</button>
+                                        <a href="/auth/facebook" class=" btn btn-facebook-lined btn-full-width"><i class="fa fa-facebook"
+                                            ></i> Login with Facebook</a>
                                         
-                                        <button type="button" class="homey-google-login btn btn-google-plus-lined btn-full-width"><i class="fa fa-google-plus" aria-hidden="true"></i> Login with Google</button>
+                                        <a href="/auth/google" class=" btn btn-google-plus-lined btn-full-width"><i class="fa fa-google-plus" ></i> Login with Google</a>
                     
                     <div class="modal-login-form">
                                                 <p class="text-center"><strong>Register with your email</strong></p>
-                                                <form>
+                                                <form action="/" method="POST">
                             <div class="form-group">
                                 <input name="username" type="text" class="form-control email-input-1" placeholder="Username" />
                             </div>
@@ -1200,7 +1202,7 @@ backface-visibility: hidden;
                               <input type="text" name="phone" class="form-control email-input-1" placeholder="Phone">
                             </div>
                             <div class="form-group">
-                              <input type="text" name="full-name" class="form-control email-input-1" placeholder="full name">
+                              <input type="text" name="fullname" class="form-control email-input-1" placeholder="full name">
                             </div>
                             <div class="form-group">
                               <input type="password" name="password" class="form-control email-input-1" placeholder="Password">
@@ -1220,7 +1222,7 @@ backface-visibility: hidden;
 
                             
                             <input type="hidden" id="homey_register_security" name="homey_register_security" value="a13a83d72c" /><input type="hidden" name="_wp_http_referer" value="/splash-page/?splash_type=image" />                            <input type="hidden" name="action" value="homey_register">
-                            <button type="submit" class="homey-register-button btn btn-primary btn-full-width">Register</button>
+                            <button type="submit" class=" btn btn-primary btn-full-width">Register</button>
                         </form>
                         <p class="text-center">Do you already have an account? <a href="#" data-toggle="modal" data-target="#modal-login" data-dismiss="modal">Log In</a></p>
                     </div>
