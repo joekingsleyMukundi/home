@@ -38,7 +38,8 @@ const userSchema = new mongoose.Schema({
   phone: String,
   role: String,
   password: String,
-  googleid: String,
+  googleId: String,
+  facebookId: String,
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -67,9 +68,12 @@ passport.use(
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function (accessToken, refreshToken, profile, cb) {
-      User.findOrCreate({ googleId: profile.id }, function (err, user) {
-        return cb(err, user);
-      });
+      User.findOrCreate(
+        { googleId: profile.id, username: profile.displayName },
+        function (err, user) {
+          return cb(err, user);
+        }
+      );
     }
   )
 );
@@ -82,9 +86,12 @@ passport.use(
       callbackURL: "http://localhost:3000/auth/facebook/home",
     },
     function (accessToken, refreshToken, profile, cb) {
-      User.findOrCreate({ facebookId: profile.id }, function (err, user) {
-        return cb(err, user);
-      });
+      User.findOrCreate(
+        { facebookId: profile.id, username: profile.displayName },
+        function (err, user) {
+          return cb(err, user);
+        }
+      );
     }
   )
 );
@@ -119,7 +126,17 @@ app.post("/", (req, res) => {
 
 app.get("/home", (req, res) => {
   if (req.isAuthenticated()) {
-    res.render("home.ejs");
+    User.findById({ _id: req.user.id }, (err, foundusers) => {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundusers) {
+          console.log(foundusers);
+          const username = foundusers.username;
+          res.render("home.ejs", { userdisplayname: username });
+        }
+      }
+    });
   } else {
     res.redirect("/");
   }
