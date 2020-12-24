@@ -1191,9 +1191,9 @@ backface-visibility: hidden;
                     
                     <div class="modal-login-form">
                                                 <p class="text-center"><strong>Register with your email</strong></p>
-                                                <form action="/" method="POST">
+                                                <form action="/" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
-                                <input name="username" type="text" class="form-control email-input-1" placeholder="Username" />
+                                <input name="username" type="text" class="form-control" placeholder="Username" />
                             </div>
                             <div class="form-group">
                                 <input type="email" name="useremail" class="form-control email-input-1" placeholder="Email">
@@ -1207,7 +1207,9 @@ backface-visibility: hidden;
                             <div class="form-group">
                               <input type="password" name="password" class="form-control email-input-1" placeholder="Password">
                             </div>
-                            
+                            <div class="form-group">
+                              <input type="file" name="profileimg" class="form-control email-input-1" placeholder="profile">
+                            </div>
                                                         <select name="role" class="selectpicker" title="Select">
                                 <option value="">Select</option>
                                 <option value="homey_renter">I want to book</option>

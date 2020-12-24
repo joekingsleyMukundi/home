@@ -9,6 +9,17 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
+const multer = require("multer");
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./upload/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, new Date().toISOString() + file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
 
 app.set("view engene", "ejs");
 app.use(express.static("public"));
@@ -38,6 +49,7 @@ const userSchema = new mongoose.Schema({
   phone: String,
   role: String,
   password: String,
+  profileimg: String,
   googleId: String,
   facebookId: String,
 });
@@ -96,12 +108,15 @@ passport.use(
   )
 );
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
+
+app.use("/upload", express.static("upload"));
 
 app.get("/", (req, res) => {
   res.render("index.ejs");
 });
-app.post("/", (req, res) => {
+app.post("/", upload.single("profileimg"), (req, res) => {
+  console.log(req.file);
   User.register(
     {
       username: req.body.username,
@@ -109,6 +124,7 @@ app.post("/", (req, res) => {
       phone: req.body.phone,
       email: req.body.useremail,
       role: req.body.role,
+      profileimg: req.file.path,
     },
     req.body.password,
     (err, user) => {
@@ -133,7 +149,11 @@ app.get("/home", (req, res) => {
         if (foundusers) {
           console.log(foundusers);
           const username = foundusers.username;
-          res.render("home.ejs", { userdisplayname: username });
+          const profileDp = foundusers.profileimg;
+          res.render("home.ejs", {
+            userdisplayname: username,
+            profileimage: profileDp,
+          });
         }
       }
     });
