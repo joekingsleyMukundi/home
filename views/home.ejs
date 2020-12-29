@@ -982,765 +982,121 @@ backface-visibility: hidden;
 			<div class="listing-wrap item-grid-view">
 				<div class="row">
 					<div id="homey-listing-carousel-mfCLC" data-token="mfCLC" class="homey-carousel homey-carouse-elementor item-grid-slider-view item-grid-slider-view-3">
-						<div class="item-wrap infobox_trigger homey-matchHeight">
-    <div class="media property-item">
-        <div class="media-left">
-            <div class="item-media item-media-thumb">
-                
-                <span class="label-wrap top-left">
-                    <span class="label label-success label-featured">Featured</span>
-                </span>
-                <a class="hover-effect" href="../listing/city-penthouse-in-central-city/index.html">
-                <img width="450" height="300" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/10-450x300.jpg" class="img-responsive wp-post-image" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/10-450x300.jpg 450w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/10-300x200.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/10-768x512.jpg 768w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/10-1024x683.jpg 1024w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/10-1140x760.jpg 1140w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/10-120x80.jpg 120w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/10-750x500.jpg 750w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/10.jpg 1620w" sizes="(max-width: 450px) 100vw, 450px" />                </a>
 
-                                <div class="item-media-price">
-                    <span class="item-price">
-                        <sup>$</sup>350<sub>/night</sub>
-                    </span>
-                </div>
-                
-                                <div class="item-user-image">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                </div>
-                            </div>
+<% if (Housedbstatus!=0){%>
+  <% houses.forEach((house)=>{%>
+    <div class="item-wrap infobox_trigger homey-matchHeight">
+      <div class="media property-item">
+        <div class="media-left">
+          <div class="item-media item-media-thumb">
+    
+            <span class="label-wrap top-left">
+              <span class="label label-success label-featured">Featured</span>
+            </span>
+            <a class="hover-effect" href="../listing/beatiful-condo-room/index.html">
+              <img width="450" height="300" src="<%= house.housedp  %> " class="img-responsive wp-post-image" alt=""
+                loading="lazy" /> </a>
+    
+            <div class="item-media-price">
+              <span class="item-price">
+                <sup>$</sup>
+                <%= house.price %> <sub>/night</sub>
+              </span>
+            </div>
+    
+            <div class="item-user-image">
+              <img style="border: 1px solid grey; border-radius: 50%; height:36px; width:36px; object-fit: cover;"
+                src="<%= house.ownerdp %> " alt="" />
+            </div>
+          </div>
         </div>
         <div class="media-body item-body clearfix">
-            <div class="item-title-head table-block">
-                <div class="title-head-left">
-                    <h2 class="title"><a href="../listing/city-penthouse-in-central-city/index.html">
-                    City Penthouse In Central City</a></h2>
-                    <address class="item-address">4432 Nautilus Dr, Miami Beach, FL 33140</address>                </div>
+          <div class="item-title-head table-block">
+            <div class="title-head-left">
+              <h2 class="title"><a href="../listing/beatiful-condo-room/index.html">
+                  <%= house.title %>
+                </a></h2>
+              <address class="item-address">
+                <%= house.address %> , <%= house.area %> , <%= house.city %> , <%= house.areacode %>
+              </address>
             </div>
-
-                        <ul class="item-amenities">
-                
-                                <li>
-                    <i class="fa fa-bed"></i>                    <span class="total-beds">2</span> <span class="item-label">Bedrooms</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-shower"></i>                    <span class="total-baths">2</span> <span class="item-label">Baths</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-user"></i>                    <span class="total-guests">4</span> <span class="item-label">Guests</span>
-                </li>
-                
-                                <li class="item-type">Apartment</li>
-                            </ul>
-            
-                        <div class="item-user-image list-item-hidden">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                    <span class="item-user-info">Hosted by<br>
-                    Kenneth James</span>
-            </div>
-            
-            <div class="item-footer">
-
-                                <div class="footer-right">
-                    <div class="item-tools">
-                        <div class="btn-group dropup">
-                            <button class="btn-item-tools dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
-<ul class="dropdown-menu">
-    <li>
-    	<a class="homey_compare compare-250" href="#" data-listing_id="250">Compare</a>
-    </li>
-    <li>
-    	<a href="#" class="add_fav" data-listid="250">
-    		Add to Favorite    	</a>
-    </li>
-</ul>                        </div>
-                    </div>
+          </div>
+    
+          <ul class="item-amenities">
+    
+            <li>
+              <i class="fa fa-bed"></i> <span class="total-beds">
+                <%= house.rooms %>
+              </span> <span class="item-label">rooms</span>
+            </li>
+    
+            <li>
+              <i class="fa fa-shower"></i> <span class="total-baths">
+                <%= house.births %>
+              </span> <span class="item-label">Baths</span>
+            </li>
+    
+            <li>
+              <i class="fa fa-user"></i> <span class="total-guests">
+                <%= house.renters %>
+              </span> <span class="item-label">Guests</span>
+            </li>
+    
+            <li class="item-type">
+              <%=house.type %>
+            </li>
+          </ul>
+    
+          <div class="item-user-image ">
+            <img style="border: 1px solid grey; border-radius: 50%; height:36px; width:36px; object-fit: cover;"
+              src="<%= house.ownerdp %> " alt="" /> <span class="item-user-info">Hosted by<br>
+              <%= house.ownername %>
+            </span>
+          </div>
+    
+          <div class="item-footer">
+    
+            <div class="footer-right">
+              <div class="item-tools">
+                <div class="btn-group dropup">
+                  <button class="btn-item-tools dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="homey_compare compare-265" href="#" data-listing_id="265">Compare</a>
+                    </li>
+                    <li>
+                      <a href="#" class="add_fav" data-listid="265">
+                        Add to Favorite </a>
+                    </li>
+                  </ul>
                 </div>
-                
-                                <div class="footer-left">
-                    <div class="stars">
-                        <ul class="list-inline rating">
-                            
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star-o"></li><li><span class="star-text-right">Good</span></li>                        </ul>
-                    </div>
-                </div>
-                
+              </div>
             </div>
+    
+            <div class="footer-left">
+              <div class="stars">
+                <ul class="list-inline rating">
+    
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star-o"></li>
+                  <li class="fa fa-star-o"></li>
+                  <li><span class="star-text-right">Average</span></li>
+                </ul>
+              </div>
+            </div>
+    
+          </div>
         </div>
+      </div>
     </div>
-</div><!-- .item-wrap -->
-<div class="item-wrap infobox_trigger homey-matchHeight">
-    <div class="media property-item">
-        <div class="media-left">
-            <div class="item-media item-media-thumb">
-                
-                <span class="label-wrap top-left">
-                    <span class="label label-success label-featured">Featured</span>
-                </span>
-                <a class="hover-effect" href="../listing/beatiful-condo-room/index.html">
-                <img width="450" height="300" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/32-6-450x300.jpg" class="img-responsive wp-post-image" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/32-6-450x300.jpg 450w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/32-6-300x200.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/32-6-768x512.jpg 768w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/32-6-1024x683.jpg 1024w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/32-6-1140x760.jpg 1140w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/32-6-120x80.jpg 120w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/32-6-750x500.jpg 750w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/32-6.jpg 1440w" sizes="(max-width: 450px) 100vw, 450px" />                </a>
-
-                                <div class="item-media-price">
-                    <span class="item-price">
-                        <sup>$</sup>79<sub>/night</sub>
-                    </span>
-                </div>
-                
-                                <div class="item-user-image">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost07-2-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost07-2-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost07-2-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost07-2-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost07-2-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost07-2.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                </div>
-                            </div>
-        </div>
-        <div class="media-body item-body clearfix">
-            <div class="item-title-head table-block">
-                <div class="title-head-left">
-                    <h2 class="title"><a href="../listing/beatiful-condo-room/index.html">
-                    Beatiful Condo Room</a></h2>
-                    <address class="item-address">470 Park Ave S, New York, NY 10016</address>                </div>
-            </div>
-
-                        <ul class="item-amenities">
-                
-                                <li>
-                    <i class="fa fa-bed"></i>                    <span class="total-beds">1</span> <span class="item-label">Bedrooms</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-shower"></i>                    <span class="total-baths">1.5</span> <span class="item-label">Baths</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-user"></i>                    <span class="total-guests">2</span> <span class="item-label">Guests</span>
-                </li>
-                
-                                <li class="item-type">Condo</li>
-                            </ul>
-            
-                        <div class="item-user-image list-item-hidden">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost07-2-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost07-2-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost07-2-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost07-2-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost07-2-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost07-2.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                    <span class="item-user-info">Hosted by<br>
-                    Ashley Reid</span>
-            </div>
-            
-            <div class="item-footer">
-
-                                <div class="footer-right">
-                    <div class="item-tools">
-                        <div class="btn-group dropup">
-                            <button class="btn-item-tools dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
-<ul class="dropdown-menu">
-    <li>
-    	<a class="homey_compare compare-265" href="#" data-listing_id="265">Compare</a>
-    </li>
-    <li>
-    	<a href="#" class="add_fav" data-listid="265">
-    		Add to Favorite    	</a>
-    </li>
-</ul>                        </div>
-                    </div>
-                </div>
-                
-                                <div class="footer-left">
-                    <div class="stars">
-                        <ul class="list-inline rating">
-                            
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star-o"></li> 
-				<li class="fa fa-star-o"></li><li><span class="star-text-right">Average</span></li>                        </ul>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div><!-- .item-wrap -->
-<div class="item-wrap infobox_trigger homey-matchHeight">
-    <div class="media property-item">
-        <div class="media-left">
-            <div class="item-media item-media-thumb">
-                
-                <span class="label-wrap top-left">
-                    <span class="label label-success label-featured">Featured</span>
-                </span>
-                <a class="hover-effect" href="../listing/comfortable-clean-bedspace/index.html">
-                <img width="450" height="300" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/12-450x300.jpg" class="img-responsive wp-post-image" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/12-450x300.jpg 450w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/12-300x200.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/12-768x512.jpg 768w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/12-1024x683.jpg 1024w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/12-1140x760.jpg 1140w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/12-120x80.jpg 120w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/12-750x500.jpg 750w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/12.jpg 1620w" sizes="(max-width: 450px) 100vw, 450px" />                </a>
-
-                                <div class="item-media-price">
-                    <span class="item-price">
-                        <sup>$</sup>185<sub>/night</sub>
-                    </span>
-                </div>
-                
-                                <div class="item-user-image">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost09-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost09-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost09-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost09-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost09-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost09.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                </div>
-                            </div>
-        </div>
-        <div class="media-body item-body clearfix">
-            <div class="item-title-head table-block">
-                <div class="title-head-left">
-                    <h2 class="title"><a href="../listing/comfortable-clean-bedspace/index.html">
-                    Comfortable &#038; Clean Bedspace</a></h2>
-                    <address class="item-address">2633 Broadway, New York, NY 10025</address>                </div>
-            </div>
-
-                        <ul class="item-amenities">
-                
-                                <li>
-                    <i class="fa fa-bed"></i>                    <span class="total-beds">1</span> <span class="item-label">Bedrooms</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-shower"></i>                    <span class="total-baths">1</span> <span class="item-label">Baths</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-user"></i>                    <span class="total-guests">2</span> <span class="item-label">Guests</span>
-                </li>
-                
-                                <li class="item-type">Bed &amp; Breakfast</li>
-                            </ul>
-            
-                        <div class="item-user-image list-item-hidden">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost09-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost09-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost09-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost09-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost09-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost09.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                    <span class="item-user-info">Hosted by<br>
-                    Andrew Garcia</span>
-            </div>
-            
-            <div class="item-footer">
-
-                                <div class="footer-right">
-                    <div class="item-tools">
-                        <div class="btn-group dropup">
-                            <button class="btn-item-tools dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
-<ul class="dropdown-menu">
-    <li>
-    	<a class="homey_compare compare-269" href="#" data-listing_id="269">Compare</a>
-    </li>
-    <li>
-    	<a href="#" class="add_fav" data-listid="269">
-    		Add to Favorite    	</a>
-    </li>
-</ul>                        </div>
-                    </div>
-                </div>
-                
-                                <div class="footer-left">
-                    <div class="stars">
-                        <ul class="list-inline rating">
-                            
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star-o"></li><li><span class="star-text-right">Good</span></li>                        </ul>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div><!-- .item-wrap -->
-<div class="item-wrap infobox_trigger homey-matchHeight">
-    <div class="media property-item">
-        <div class="media-left">
-            <div class="item-media item-media-thumb">
-                
-                <span class="label-wrap top-left">
-                    <span class="label label-success label-featured">Featured</span>
-                </span>
-                <a class="hover-effect" href="../listing/spacious-family-home/index.html">
-                <img width="450" height="300" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/35-450x300.jpg" class="img-responsive wp-post-image" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/35-450x300.jpg 450w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/35-300x200.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/35-768x512.jpg 768w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/35-1024x683.jpg 1024w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/35-1140x760.jpg 1140w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/35-120x80.jpg 120w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/35-750x500.jpg 750w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/35.jpg 1440w" sizes="(max-width: 450px) 100vw, 450px" />                </a>
-
-                                <div class="item-media-price">
-                    <span class="item-price">
-                        <sup>$</sup>455<sub>/night</sub>
-                    </span>
-                </div>
-                
-                                <div class="item-user-image">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost11-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost11-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost11-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost11-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost11-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost11.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                </div>
-                            </div>
-        </div>
-        <div class="media-body item-body clearfix">
-            <div class="item-title-head table-block">
-                <div class="title-head-left">
-                    <h2 class="title"><a href="../listing/spacious-family-home/index.html">
-                    Spacious Family Home</a></h2>
-                    <address class="item-address">268 W 10th St, New York, NY 10014</address>                </div>
-            </div>
-
-                        <ul class="item-amenities">
-                
-                                <li>
-                    <i class="fa fa-bed"></i>                    <span class="total-beds">3</span> <span class="item-label">Bedrooms</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-shower"></i>                    <span class="total-baths">2</span> <span class="item-label">Baths</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-user"></i>                    <span class="total-guests">6</span> <span class="item-label">Guests</span>
-                </li>
-                
-                                <li class="item-type">House</li>
-                            </ul>
-            
-                        <div class="item-user-image list-item-hidden">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost11-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost11-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost11-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost11-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost11-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost11.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                    <span class="item-user-info">Hosted by<br>
-                    Crystal Elliott</span>
-            </div>
-            
-            <div class="item-footer">
-
-                                <div class="footer-right">
-                    <div class="item-tools">
-                        <div class="btn-group dropup">
-                            <button class="btn-item-tools dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
-<ul class="dropdown-menu">
-    <li>
-    	<a class="homey_compare compare-277" href="#" data-listing_id="277">Compare</a>
-    </li>
-    <li>
-    	<a href="#" class="add_fav" data-listid="277">
-    		Add to Favorite    	</a>
-    </li>
-</ul>                        </div>
-                    </div>
-                </div>
-                
-                                <div class="footer-left">
-                    <div class="stars">
-                        <ul class="list-inline rating">
-                            
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li><li><span class="star-text-right">Excellent</span></li>                        </ul>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div><!-- .item-wrap -->
-<div class="item-wrap infobox_trigger homey-matchHeight">
-    <div class="media property-item">
-        <div class="media-left">
-            <div class="item-media item-media-thumb">
-                
-                <span class="label-wrap top-left">
-                    <span class="label label-success label-featured">Featured</span>
-                </span>
-                <a class="hover-effect" href="../listing/moder-lake-view-family-home/index.html">
-                <img width="450" height="300" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/26-450x300.jpg" class="img-responsive wp-post-image" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/26-450x300.jpg 450w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/26-300x200.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/26-768x512.jpg 768w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/26-1024x683.jpg 1024w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/26-1140x760.jpg 1140w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/26-120x80.jpg 120w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/26-750x500.jpg 750w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/26.jpg 1620w" sizes="(max-width: 450px) 100vw, 450px" />                </a>
-
-                                <div class="item-media-price">
-                    <span class="item-price">
-                        <sup>$</sup>299<sub>/night</sub>
-                    </span>
-                </div>
-                
-                                <div class="item-user-image">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost20-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost20-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost20-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost20-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost20-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost20.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                </div>
-                            </div>
-        </div>
-        <div class="media-body item-body clearfix">
-            <div class="item-title-head table-block">
-                <div class="title-head-left">
-                    <h2 class="title"><a href="../listing/moder-lake-view-family-home/index.html">
-                    Moder Lake View Family Home</a></h2>
-                    <address class="item-address">3715 26th St, San Francisco, CA 94110</address>                </div>
-            </div>
-
-                        <ul class="item-amenities">
-                
-                                <li>
-                    <i class="fa fa-bed"></i>                    <span class="total-beds">3</span> <span class="item-label">Bedrooms</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-shower"></i>                    <span class="total-baths">2</span> <span class="item-label">Baths</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-user"></i>                    <span class="total-guests">6</span> <span class="item-label">Guests</span>
-                </li>
-                
-                                <li class="item-type">House</li>
-                            </ul>
-            
-                        <div class="item-user-image list-item-hidden">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost20-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost20-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost20-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost20-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost20-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost20.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                    <span class="item-user-info">Hosted by<br>
-                    Albert Rose</span>
-            </div>
-            
-            <div class="item-footer">
-
-                                <div class="footer-right">
-                    <div class="item-tools">
-                        <div class="btn-group dropup">
-                            <button class="btn-item-tools dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
-<ul class="dropdown-menu">
-    <li>
-    	<a class="homey_compare compare-328" href="#" data-listing_id="328">Compare</a>
-    </li>
-    <li>
-    	<a href="#" class="add_fav" data-listid="328">
-    		Add to Favorite    	</a>
-    </li>
-</ul>                        </div>
-                    </div>
-                </div>
-                
-                                <div class="footer-left">
-                    <div class="stars">
-                        <ul class="list-inline rating">
-                            
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star-o"></li> 
-				<li class="fa fa-star-o"></li> 
-				<li class="fa fa-star-o"></li><li><span class="star-text-right">Fair</span></li>                        </ul>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div><!-- .item-wrap -->
-<div class="item-wrap infobox_trigger homey-matchHeight">
-    <div class="media property-item">
-        <div class="media-left">
-            <div class="item-media item-media-thumb">
-                
-                <span class="label-wrap top-left">
-                    <span class="label label-success label-featured">Featured</span>
-                </span>
-                <a class="hover-effect" href="../listing/georgeus-villa-in-the-woods/index.html">
-                <img width="450" height="300" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/23--450x300.jpg" class="img-responsive wp-post-image" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/23--450x300.jpg 450w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/23--300x200.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/23--768x512.jpg 768w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/23--1024x683.jpg 1024w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/23--1140x760.jpg 1140w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/23--120x80.jpg 120w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/23--750x500.jpg 750w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/23-.jpg 1440w" sizes="(max-width: 450px) 100vw, 450px" />                </a>
-
-                                <div class="item-media-price">
-                    <span class="item-price">
-                        <sup>$</sup>45<sub>/night</sub>
-                    </span>
-                </div>
-                
-                                <div class="item-user-image">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost25-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost25-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost25-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost25-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost25-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost25.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                </div>
-                            </div>
-        </div>
-        <div class="media-body item-body clearfix">
-            <div class="item-title-head table-block">
-                <div class="title-head-left">
-                    <h2 class="title"><a href="../listing/georgeus-villa-in-the-woods/index.html">
-                    Georgeus Villa In The Woods</a></h2>
-                    <address class="item-address">3798 Divisadero St, San Francisco, CA 94123</address>                </div>
-            </div>
-
-                        <ul class="item-amenities">
-                
-                                <li>
-                    <i class="fa fa-bed"></i>                    <span class="total-beds">3</span> <span class="item-label">Bedrooms</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-shower"></i>                    <span class="total-baths">2</span> <span class="item-label">Baths</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-user"></i>                    <span class="total-guests">6</span> <span class="item-label">Guests</span>
-                </li>
-                
-                                <li class="item-type">House</li>
-                            </ul>
-            
-                        <div class="item-user-image list-item-hidden">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost25-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost25-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost25-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost25-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost25-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost25.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                    <span class="item-user-info">Hosted by<br>
-                    Michael Kelley</span>
-            </div>
-            
-            <div class="item-footer">
-
-                                <div class="footer-right">
-                    <div class="item-tools">
-                        <div class="btn-group dropup">
-                            <button class="btn-item-tools dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
-<ul class="dropdown-menu">
-    <li>
-    	<a class="homey_compare compare-340" href="#" data-listing_id="340">Compare</a>
-    </li>
-    <li>
-    	<a href="#" class="add_fav" data-listid="340">
-    		Add to Favorite    	</a>
-    </li>
-</ul>                        </div>
-                    </div>
-                </div>
-                
-                                <div class="footer-left">
-                    <div class="stars">
-                        <ul class="list-inline rating">
-                            
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li><li><span class="star-text-right">Excellent</span></li>                        </ul>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div><!-- .item-wrap -->
-<div class="item-wrap infobox_trigger homey-matchHeight">
-    <div class="media property-item">
-        <div class="media-left">
-            <div class="item-media item-media-thumb">
-                
-                
-                <a class="hover-effect" href="../listing/modern-apartment-with-ocean-view/index.html">
-                <img width="450" height="300" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/27-450x300.jpg" class="img-responsive wp-post-image" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/27-450x300.jpg 450w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/27-300x200.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/27-768x512.jpg 768w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/27-1024x683.jpg 1024w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/27-1140x760.jpg 1140w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/27-120x80.jpg 120w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/27-750x500.jpg 750w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/27.jpg 1440w" sizes="(max-width: 450px) 100vw, 450px" />                </a>
-
-                                <div class="item-media-price">
-                    <span class="item-price">
-                        <sup>$</sup>185<sub>/night</sub>
-                    </span>
-                </div>
-                
-                                <div class="item-user-image">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                </div>
-                            </div>
-        </div>
-        <div class="media-body item-body clearfix">
-            <div class="item-title-head table-block">
-                <div class="title-head-left">
-                    <h2 class="title"><a href="../listing/modern-apartment-with-ocean-view/index.html">
-                    Modern Apartment With Ocean View</a></h2>
-                    <address class="item-address">4725 Collins Ave, Miami Beach, FL 33140</address>                </div>
-            </div>
-
-                        <ul class="item-amenities">
-                
-                                <li>
-                    <i class="fa fa-bed"></i>                    <span class="total-beds">2</span> <span class="item-label">Bedrooms</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-shower"></i>                    <span class="total-baths">2</span> <span class="item-label">Baths</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-user"></i>                    <span class="total-guests">4</span> <span class="item-label">Guests</span>
-                </li>
-                
-                                <li class="item-type">Apartment</li>
-                            </ul>
-            
-                        <div class="item-user-image list-item-hidden">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost01.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                    <span class="item-user-info">Hosted by<br>
-                    Kenneth James</span>
-            </div>
-            
-            <div class="item-footer">
-
-                                <div class="footer-right">
-                    <div class="item-tools">
-                        <div class="btn-group dropup">
-                            <button class="btn-item-tools dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
-<ul class="dropdown-menu">
-    <li>
-    	<a class="homey_compare compare-240" href="#" data-listing_id="240">Compare</a>
-    </li>
-    <li>
-    	<a href="#" class="add_fav" data-listid="240">
-    		Add to Favorite    	</a>
-    </li>
-</ul>                        </div>
-                    </div>
-                </div>
-                
-                                <div class="footer-left">
-                    <div class="stars">
-                        <ul class="list-inline rating">
-                            
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star-o"></li> 
-				<li class="fa fa-star-o"></li> 
-				<li class="fa fa-star-o"></li><li><span class="star-text-right">Fair</span></li>                        </ul>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div><!-- .item-wrap -->
-<div class="item-wrap infobox_trigger homey-matchHeight">
-    <div class="media property-item">
-        <div class="media-left">
-            <div class="item-media item-media-thumb">
-                
-                
-                <a class="hover-effect" href="../listing/confortable-room/index.html">
-                <img width="450" height="300" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/14-450x300.jpg" class="img-responsive wp-post-image" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/14-450x300.jpg 450w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/14-300x200.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/14-768x512.jpg 768w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/14-1024x683.jpg 1024w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/14-1140x760.jpg 1140w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/14-120x80.jpg 120w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/14-750x500.jpg 750w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/14.jpg 1620w" sizes="(max-width: 450px) 100vw, 450px" />                </a>
-
-                                <div class="item-media-price">
-                    <span class="item-price">
-                        <sup>$</sup>70<sub>/night</sub>
-                    </span>
-                </div>
-                
-                                <div class="item-user-image">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_a-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_a-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_a-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_a-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_a-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_a.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                </div>
-                            </div>
-        </div>
-        <div class="media-body item-body clearfix">
-            <div class="item-title-head table-block">
-                <div class="title-head-left">
-                    <h2 class="title"><a href="../listing/confortable-room/index.html">
-                    Confortable Room</a></h2>
-                    <address class="item-address">3700 Pine Tree Dr, Miami Beach, FL 33140</address>                </div>
-            </div>
-
-                        <ul class="item-amenities">
-                
-                                <li>
-                    <i class="fa fa-bed"></i>                    <span class="total-beds">1</span> <span class="item-label">Bedrooms</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-shower"></i>                    <span class="total-baths">1</span> <span class="item-label">Baths</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-user"></i>                    <span class="total-guests">2</span> <span class="item-label">Guests</span>
-                </li>
-                
-                                <li class="item-type">Bed &amp; Breakfast</li>
-                            </ul>
-            
-                        <div class="item-user-image list-item-hidden">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_a-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_a-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_a-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_a-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_a-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_a.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                    <span class="item-user-info">Hosted by<br>
-                    Gerald Carlson</span>
-            </div>
-            
-            <div class="item-footer">
-
-                                <div class="footer-right">
-                    <div class="item-tools">
-                        <div class="btn-group dropup">
-                            <button class="btn-item-tools dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
-<ul class="dropdown-menu">
-    <li>
-    	<a class="homey_compare compare-244" href="#" data-listing_id="244">Compare</a>
-    </li>
-    <li>
-    	<a href="#" class="add_fav" data-listid="244">
-    		Add to Favorite    	</a>
-    </li>
-</ul>                        </div>
-                    </div>
-                </div>
-                
-                                <div class="footer-left">
-                    <div class="stars">
-                        <ul class="list-inline rating">
-                            
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li><li><span class="star-text-right">Excellent</span></li>                        </ul>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div><!-- .item-wrap -->
-<div class="item-wrap infobox_trigger homey-matchHeight">
-    <div class="media property-item">
-        <div class="media-left">
-            <div class="item-media item-media-thumb">
-                
-                
-                <a class="hover-effect" href="../listing/beautiful-family-home/index.html">
-                <img width="450" height="300" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/06-450x300.jpg" class="img-responsive wp-post-image" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/06-450x300.jpg 450w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/06-300x200.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/06-768x512.jpg 768w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/06-1024x683.jpg 1024w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/06-1140x760.jpg 1140w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/06-120x80.jpg 120w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/06-750x500.jpg 750w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/06.jpg 1620w" sizes="(max-width: 450px) 100vw, 450px" />                </a>
-
-                                <div class="item-media-price">
-                    <span class="item-price">
-                        <sup>$</sup>590<sub>/night</sub>
-                    </span>
-                </div>
-                
-                                <div class="item-user-image">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_b-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_b-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_b-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_b-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_b-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_b.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                </div>
-                            </div>
-        </div>
-        <div class="media-body item-body clearfix">
-            <div class="item-title-head table-block">
-                <div class="title-head-left">
-                    <h2 class="title"><a href="../listing/beautiful-family-home/index.html">
-                    Beautiful Family Home</a></h2>
-                    <address class="item-address">601 15th St, Miami Beach, FL 33139</address>                </div>
-            </div>
-
-                        <ul class="item-amenities">
-                
-                                <li>
-                    <i class="fa fa-bed"></i>                    <span class="total-beds">3</span> <span class="item-label">Bedrooms</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-shower"></i>                    <span class="total-baths">2</span> <span class="item-label">Baths</span>
-                </li>
-                
-                                <li>
-                    <i class="fa fa-user"></i>                    <span class="total-guests">6</span> <span class="item-label">Guests</span>
-                </li>
-                
-                                <li class="item-type">House</li>
-                            </ul>
-            
-                        <div class="item-user-image list-item-hidden">
-                    <img width="36" height="36" src="http://89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_b-150x150.jpg" class="img-responsive img-circle" alt="" loading="lazy" srcset="//89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_b-150x150.jpg 150w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_b-300x300.jpg 300w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_b-250x250.jpg 250w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_b-360x360.jpg 360w, //89239-660555-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/HomeyHost02_b.jpg 400w" sizes="(max-width: 36px) 100vw, 36px" />                    <span class="item-user-info">Hosted by<br>
-                    Donna Wade</span>
-            </div>
-            
-            <div class="item-footer">
-
-                                <div class="footer-right">
-                    <div class="item-tools">
-                        <div class="btn-group dropup">
-                            <button class="btn-item-tools dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
-<ul class="dropdown-menu">
-    <li>
-    	<a class="homey_compare compare-246" href="#" data-listing_id="246">Compare</a>
-    </li>
-    <li>
-    	<a href="#" class="add_fav" data-listid="246">
-    		Add to Favorite    	</a>
-    </li>
-</ul>                        </div>
-                    </div>
-                </div>
-                
-                                <div class="footer-left">
-                    <div class="stars">
-                        <ul class="list-inline rating">
-                            
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star"></li> 
-				<li class="fa fa-star-o"></li><li><span class="star-text-right">Good</span></li>                        </ul>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div><!-- .item-wrap -->				
+  <%})%>
+  
+<%} else{%> 
+  <h3>no featured houses</h3>
+<%}%>				
 	</div>
 				</div>
 			</div><!-- grid-listing-page -->
