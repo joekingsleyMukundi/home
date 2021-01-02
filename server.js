@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const ejs = require("ejs");
 const app = express();
 const session = require("express-session");
 const passport = require("passport");
@@ -9,6 +10,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
+const path = require("path");
 const multer = require("multer");
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -138,8 +140,9 @@ passport.use(
     }
   )
 );
-
 app.use("/upload", express.static("upload"));
+app.use("/listing/upload", express.static("upload"));
+app.use("/listing/book/upload", express.static("upload"));
 
 app.get("/", (req, res) => {
   res.render("index.ejs");
@@ -188,19 +191,6 @@ app.get("/home", (req, res) => {
                 profileimage: profileDp,
                 userRole: role,
                 houses: foundhouses,
-                // houseImage: foundhouse.housedp,
-                // prices: foundhouse.price,
-                // listerimage: foundowner.profileimg,
-                // housetitle: foundhouse.title,
-                // address: foundhouse.price,
-                // area: foundhouse.area,
-                // city: foundhouse.area,
-                // housenumber: foundhouse.address,
-                // rooms: foundhouse.rooms,
-                // births: foundhouse.births,
-                // renters: foundhouse.renters,
-                // type: foundhouse.type,
-                // listername: foundowner.fullname,
               });
             } else if (foundhouses.length == 0) {
               console.log("no houses");
@@ -271,14 +261,30 @@ app.get("/listing", (req, res) => {
         console.log(err);
       } else {
         if (foundusers) {
-          console.log(foundusers);
-          const username = foundusers.username;
-          const profileDp = foundusers.profileimg;
-          const role = foundusers.role;
-          res.render("listing.ejs", {
-            userdisplayname: username,
-            profileimage: profileDp,
-            userRole: role,
+          House.find({}, (err, rentals) => {
+            if (rentals.length != 0) {
+              console.log(foundusers);
+              const username = foundusers.username;
+              const profileDp = foundusers.profileimg;
+              const role = foundusers.role;
+              res.render("listing.ejs", {
+                userdisplayname: username,
+                profileimage: profileDp,
+                userRole: role,
+                rentals: rentals,
+              });
+            } else if (rentals.length == 0) {
+              console.log(foundusers);
+              const username = foundusers.username;
+              const profileDp = foundusers.profileimg;
+              const role = foundusers.role;
+              res.render("listing.ejs", {
+                userdisplayname: username,
+                profileimage: profileDp,
+                userRole: role,
+                rentals: rentals,
+              });
+            }
           });
         }
       }
@@ -287,7 +293,7 @@ app.get("/listing", (req, res) => {
     res.redirect("/");
   }
 });
-app.get("/Appartment", (req, res) => {
+app.get("/listing/:housetype", (req, res) => {
   if (req.isAuthenticated()) {
     User.findById({ _id: req.user.id }, (err, foundusers) => {
       if (err) {
@@ -295,13 +301,33 @@ app.get("/Appartment", (req, res) => {
       } else {
         if (foundusers) {
           console.log(foundusers);
-          const username = foundusers.username;
-          const profileDp = foundusers.profileimg;
-          const role = foundusers.role;
-          res.render("Appartment.ejs", {
-            userdisplayname: username,
-            profileimage: profileDp,
-            userRole: role,
+          House.find({ type: req.params.housetype }, (err, foundtypes) => {
+            if (foundtypes.length != 0) {
+              const username = foundusers.username;
+              const profileDp = foundusers.profileimg;
+              const role = foundusers.role;
+              res.render("listingtype.ejs", {
+                userdisplayname: username,
+                profileimage: profileDp,
+                userRole: role,
+                housetypes: foundtypes,
+                numberoftypes: foundtypes.length,
+                type: req.params.housetype,
+              });
+            } else if (foundtypes.length == 0) {
+              const username = foundusers.username;
+              const profileDp = foundusers.profileimg;
+              const role = foundusers.role;
+              res.render("listingtype.ejs", {
+                userdisplayname: username,
+                profileimage: profileDp,
+                userRole: role,
+                numberoftypes: foundtypes.length,
+                type: req.params.housetype,
+              });
+            } else if (err) {
+              console.log(err);
+            }
           });
         }
       }
@@ -310,21 +336,39 @@ app.get("/Appartment", (req, res) => {
     res.redirect("/");
   }
 });
-app.get("/bed-breakfast", (req, res) => {
+
+//booking
+
+app.get("/listing/book/:id", (req, res) => {
   if (req.isAuthenticated()) {
     User.findById({ _id: req.user.id }, (err, foundusers) => {
       if (err) {
         console.log(err);
       } else {
         if (foundusers) {
-          console.log(foundusers);
-          const username = foundusers.username;
-          const profileDp = foundusers.profileimg;
-          const role = foundusers.role;
-          res.render("bed-breakfast.ejs", {
-            userdisplayname: username,
-            profileimage: profileDp,
-            userRole: role,
+          House.findById({ _id: req.params.id }, (err, founditem) => {
+            if (err) {
+              console.log(`err in locating the house is ${err}`);
+            } else if (!founditem) {
+              const username = foundusers.username;
+              const profileDp = foundusers.profileimg;
+              const role = foundusers.role;
+              res.render("booking.ejs", {
+                userdisplayname: username,
+                profileimage: profileDp,
+                userRole: role,
+              });
+            } else {
+              const username = foundusers.username;
+              const profileDp = foundusers.profileimg;
+              const role = foundusers.role;
+              res.render("booking.ejs", {
+                userdisplayname: username,
+                profileimage: profileDp,
+                userRole: role,
+                type: founditem,
+              });
+            }
           });
         }
       }
@@ -333,98 +377,7 @@ app.get("/bed-breakfast", (req, res) => {
     res.redirect("/");
   }
 });
-app.get("/condo", (req, res) => {
-  if (req.isAuthenticated()) {
-    User.findById({ _id: req.user.id }, (err, foundusers) => {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundusers) {
-          console.log(foundusers);
-          const username = foundusers.username;
-          const profileDp = foundusers.profileimg;
-          const role = foundusers.role;
-          res.render("condo.ejs", {
-            userdisplayname: username,
-            profileimage: profileDp,
-            userRole: role,
-          });
-        }
-      }
-    });
-  } else {
-    res.redirect("/");
-  }
-});
-app.get("/house", (req, res) => {
-  if (req.isAuthenticated()) {
-    User.findById({ _id: req.user.id }, (err, foundusers) => {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundusers) {
-          console.log(foundusers);
-          const username = foundusers.username;
-          const profileDp = foundusers.profileimg;
-          const role = foundusers.role;
-          res.render("house.ejs", {
-            userdisplayname: username,
-            profileimage: profileDp,
-            userRole: role,
-          });
-        }
-      }
-    });
-  } else {
-    res.redirect("/");
-  }
-});
-app.get("/studio", (req, res) => {
-  if (req.isAuthenticated()) {
-    User.findById({ _id: req.user.id }, (err, foundusers) => {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundusers) {
-          console.log(foundusers);
-          const username = foundusers.username;
-          const profileDp = foundusers.profileimg;
-          const role = foundusers.role;
-          res.render("studio.ejs", {
-            userdisplayname: username,
-            profileimage: profileDp,
-            userRole: role,
-          });
-        }
-      }
-    });
-  } else {
-    res.redirect("/");
-  }
-});
-app.get("/loft", (req, res) => {
-  if (req.isAuthenticated()) {
-    User.findById({ _id: req.user.id }, (err, foundusers) => {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundusers) {
-          console.log(foundusers);
-          const username = foundusers.username;
-          const profileDp = foundusers.profileimg;
-          const role = foundusers.role;
-          res.render("studio.ejs", {
-            userdisplayname: username,
-            profileimage: profileDp,
-            userRole: role,
-          });
-        }
-      }
-    });
-  } else {
-    res.redirect("/");
-  }
-});
+
 app.get("/blog", (req, res) => {
   if (req.isAuthenticated()) {
     User.findById({ _id: req.user.id }, (err, foundusers) => {
@@ -569,6 +522,106 @@ app.post("/lisingproperty", upload.single("houseDp"), (req, res) => {
       });
     }
   });
+});
+
+//profiles
+//renter
+
+app.get("/userprofile", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById({ _id: req.user.id }, (err, foundusers) => {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundusers) {
+          console.log(foundusers);
+          const username = foundusers.username;
+          const profileDp = foundusers.profileimg;
+          const role = foundusers.role;
+          res.render("userprofile.ejs", {
+            userdisplayname: username,
+            profileimage: profileDp,
+            userRole: role,
+            user: foundusers,
+          });
+        }
+      }
+    });
+  } else {
+    res.redirect("/");
+  }
+});
+
+//host profile
+
+app.get("/hostprofile", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById({ _id: req.user.id }, (err, foundusers) => {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundusers) {
+          console.log(foundusers);
+          House.find({ ownerId: req.user.id }, (err, foundhouses) => {
+            if (foundhouses.length != 0) {
+              console.log("found houses are " + foundhouses);
+              const username = foundusers.username;
+              const profileDp = foundusers.profileimg;
+              const role = foundusers.role;
+              res.render("hostprofile.ejs", {
+                userdisplayname: username,
+                profileimage: profileDp,
+                userRole: role,
+                user: foundusers,
+                userhouses: foundhouses,
+              });
+            } else if (foundhouses == 0) {
+              const username = foundusers.username;
+              const profileDp = foundusers.profileimg;
+              const role = foundusers.role;
+              res.render("hostprofile.ejs", {
+                userdisplayname: username,
+                profileimage: profileDp,
+                userRole: role,
+                user: foundusers,
+                userhouses: foundhouses,
+              });
+            } else {
+              console.log(err);
+            }
+          });
+        }
+      }
+    });
+  } else {
+    res.redirect("/");
+  }
+});
+
+// listings table
+app.get("/mylistings", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById({ _id: req.user.id }, (err, foundusers) => {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundusers) {
+          console.log(foundusers);
+          const username = foundusers.username;
+          const profileDp = foundusers.profileimg;
+          const role = foundusers.role;
+          res.render("mylistings.ejs", {
+            userdisplayname: username,
+            profileimage: profileDp,
+            userRole: role,
+            user: foundusers,
+          });
+        }
+      }
+    });
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.get("/logout", (req, res) => {

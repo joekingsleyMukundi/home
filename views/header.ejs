@@ -21,16 +21,38 @@
                 <li style="color: black; font-weight: 900;"><%= userdisplayname%></li>
                 <li><i class="fa fa-circle-o"></i></li>
                 <li>
-                  <img style="border: 1px solid grey; border-radius: 50%; height:36px; width:36px; object-fit: cover;"  src="<%= profileimage %> "  alt="profile">
+                 
+                  <img style="border: 1px solid grey; border-radius: 50%; height:36px; width:36px; object-fit: cover;"
+                    src="<%= profileimage %> " alt="pr" >
                 </li>
               </ul>
 
               <% if (userRole=='homey_host') {%>
-              <a href="#" style="color: black;">Host</a>
+              <a href="#" style="color: black; font-weight: 900;">Host</a>
             <% } else {%>
               <a href="host-registration" class="btn btn-add-new-listing">Become a Host</a>
            <% } %>  
-              <a class="btn btn-dark" href="/logout">logout</a>
+
+           <a class="dropdown">
+            <a  class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">profile</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li> <a style="font-weight: 900;" class="dropdown-item" <%if (userRole=='homey_host') {%>
+                href="/hostprofile"
+             <% }else{%>
+              href="/userprofile"
+             <%} %>>my profile</a></li>
+              <li> <a style="font-weight: 900;" class="dropdown-item" href="#">dashboard</a></li>
+              <% if(userRole=='homey_host') {%>
+
+              <li> <a style="font-weight: 900;" class="dropdown-item" href="/lisingproperty">Add listings</a></li>
+              <li> <a style="font-weight: 900;" class="dropdown-item" href="/mylistings">my listings</a></li>
+              <li> <a style="font-weight: 900;" class="dropdown-item" href="/logout">logout</a></li>
+              <% }else{%>
+                <li> <a style="font-weight: 900;" class="dropdown-item" href="/logout">logout</a></li>
+             <% } %> 
+            </ul>
+           </a>
+              
             </div>
           </div>
         </div>
@@ -44,12 +66,12 @@
               <ul id="main-menu" class="main-menu">
                 <li id="menu-item-692"
                   class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-692">
-                  <a href="home">Home</a>
+                  <a href="/home">Home</a>
 
                 </li>
                 <li id="menu-item-193"
                   class="homey-megamenu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-193">
-                  <a href="listing">Listing</a>
+                  <a href="/listing">Listing</a>
 
                 </li>
                 <!-- <li id="menu-item-710" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-710"><a href="#">Property</a>
@@ -71,22 +93,22 @@
                   <ul class="sub-menu">
                     <li id="menu-item-1265"
                       class="menu-item menu-item-type-taxonomy menu-item-object-listing_type menu-item-1265"><a
-                        href="Appartment">Apartment</a></li>
+                        href="/listing/Appartment">Apartment</a></li>
                     <li id="menu-item-1263"
                       class="menu-item menu-item-type-taxonomy menu-item-object-listing_type menu-item-1263"><a
-                        href="bed-breakfast">Bed &amp; Breakfast</a></li>
+                        href="/listing/bed-breakfast">Bed &amp; Breakfast</a></li>
                     <li id="menu-item-1267"
                       class="menu-item menu-item-type-taxonomy menu-item-object-listing_type menu-item-1267"><a
-                        href="condo">Condo</a></li>
+                        href="/listing/condo">Condo</a></li>
                     <li id="menu-item-1264"
                       class="menu-item menu-item-type-taxonomy menu-item-object-listing_type menu-item-1264"><a
-                        href="house">House</a></li>
+                        href="/listing/house">House</a></li>
                     <li id="menu-item-1266"
                       class="menu-item menu-item-type-taxonomy menu-item-object-listing_type menu-item-1266"><a
-                        href="loft">Loft</a></li>
+                        href="/listing/loft">Loft</a></li>
                     <li id="menu-item-1268"
                       class="menu-item menu-item-type-taxonomy menu-item-object-listing_type menu-item-1268"><a
-                        href="studio">Studio</a></li>
+                        href="/listing/studio">Studio</a></li>
                   </ul>
                 </li>
 
@@ -95,7 +117,7 @@
                 </li>
                 <li id="menu-item-712"
                   class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-712">
-                  <a href="blog">Blog</a>
+                  <a href="/blog">Blog</a>
 
                 </li>
                 <li id="menu-item-711"
@@ -106,7 +128,10 @@
 
                 <li id="menu-item-1342" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1342">
                   <a href="#">Contact us</a></li>
+
+                   
               </ul>
+           
             </nav>
           </div>
         </div>
